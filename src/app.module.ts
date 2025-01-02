@@ -10,8 +10,11 @@ import { Module } from '@nestjs/common';
       },
     }),
     BullModule.registerQueue({
-      name: 'audio-transcription'
-    })
+      name: 'start-audio-transcription'
+    }),
+    BullModule.registerQueue({
+      name: 'process-audio-transcription'
+    }),
   ],
   controllers: [],
   providers: [],

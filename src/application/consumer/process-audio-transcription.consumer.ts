@@ -4,11 +4,11 @@ import { Job } from "bullmq";
 import { TranscriptionStatusEnum } from "src/domain/enum/transcription/TranscriptionStatusEnum";
 import { ITranscriptionService } from "src/domain/service/transcription/ports/ITranscriptionService";
 
-@Processor('audio-transcription')
-export class ProcessAudioTranscriptionConsumer {
+@Processor('start-audio-transcription')
+export class StartAudioTranscriptionConsumer {
     constructor(@Inject('ITranscriptionService') private readonly transcriptionService: ITranscriptionService) {}
 
-    async processAudioTranscription(job: Job<{
+    async startAudioTranscription(job: Job<{
         transcriptionId: number,
         audioUrl: string,
         language: string

@@ -2,7 +2,6 @@ import { Inject, Injectable } from "@nestjs/common";
 import { Podcast } from "src/domain/model/Podcast";
 import { IPodcastRepository } from "src/domain/repository/IPodcastRepository";
 import { IPodcastService } from "src/domain/service/podcast/ports/IPodcastService";
-import { IPodcastInsightService } from "../insights/ports/IPodcastInsightService";
 import { ITranscriptionService } from "../transcription/ports/ITranscriptionService";
 import { IPodcastEpisodeService } from "../episode/ports/IPodcastEpisodeService";
 import { PodcastEpisode } from "src/domain/model/PodcastEpisode";
@@ -11,7 +10,6 @@ import { PodcastEpisode } from "src/domain/model/PodcastEpisode";
 export class PodcastService implements IPodcastService {
     constructor(
         @Inject('IPodcastRepository') private readonly podcastRepository: IPodcastRepository,
-        @Inject('IPodcastInsightService') private readonly podcastInsightService: IPodcastInsightService,
         @Inject('ITranscriptionService') private readonly transcriptionService: ITranscriptionService,
         @Inject('IPodcastEpisodeService') private readonly podcastEpisodeService: IPodcastEpisodeService
     ) {}

@@ -13,7 +13,7 @@ export class TranscriptionService implements ITranscriptionService {
     constructor(
         @Inject('ITranscriptionProvider') private readonly transcriptionProvider: ITranscriptionProvider,
         @Inject('ITranscriptionRepository') private readonly transcriptionRepository: ITranscriptionRepository,
-        @InjectQueue('audio-transcription') private processAudioTranscriptionQueue: Queue
+        @InjectQueue('start-audio-transcription') private startAudioTranscriptionQueue: Queue
     ) {}
 
     async findById(id: number): Promise<Transcription> {
@@ -25,7 +25,7 @@ export class TranscriptionService implements ITranscriptionService {
     async create(params: CreateTranscriptionInput): Promise<void> {
         const transcription = await this.transcriptionRepository.create(params.toDomain(TranscriptionStatusEnum.PENDING));
 
-        await this.processAudioTranscriptionQueue.add('audio-transcription', {
+        await this.startAudioTranscriptionQueue.add('start-audio-transcription', {
             transcriptionId: transcription.id,
             audioUrl: params.audioUrl,
             language: params.language
