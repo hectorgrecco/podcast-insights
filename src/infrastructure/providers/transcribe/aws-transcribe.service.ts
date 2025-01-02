@@ -1,7 +1,7 @@
 import { LanguageCode, StartTranscriptionJobCommand, StartTranscriptionJobCommandInput, TranscribeClient } from "@aws-sdk/client-transcribe";
-import { ITranscribeProvider } from "src/domain/service/transcription/ports/ITranscriptionProvider";
+import { ITranscriptionProvider } from "src/domain/service/transcription/ports/ITranscriptionProvider";
 
-export class AwsTranscribeService implements ITranscribeProvider {
+export class AwsTranscribeService implements ITranscriptionProvider {
     private readonly client: TranscribeClient;
 
     constructor() {

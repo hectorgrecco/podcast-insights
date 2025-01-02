@@ -1,9 +1,9 @@
 import { SpeechClient } from "@google-cloud/speech";
 import { Injectable } from "@nestjs/common";
-import { ITranscribeProvider } from "src/domain/service/transcription/ports/ITranscriptionProvider";
+import { ITranscriptionProvider } from "src/domain/service/transcription/ports/ITranscriptionProvider";
 
 @Injectable()
-export class GoogleSpeechToTextService implements ITranscribeProvider {
+export class GoogleSpeechToTextService implements ITranscriptionProvider {
     private readonly client: SpeechClient;
 
     constructor() {
