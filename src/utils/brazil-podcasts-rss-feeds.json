@@ -1,0 +1,17 @@
+[
+    {
+        "id": 1,
+        "name": "Flow Podcast",
+        "feed": "https://anchor.fm/s/a5637400/podcast/rss"
+    },
+    {
+        "id": 2,
+        "name": "Inteligência Ltda",
+        "feed": "https://anchor.fm/s/6cf4d5a0/podcast/rss"
+    },
+    {
+        "id": 3,
+        "name": "Venus Podcast",
+        "feed": "https://anchor.fm/s/a5676948/podcast/rss"
+    }
+]
