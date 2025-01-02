@@ -10,7 +10,7 @@ export class OpenAiService implements IInsightProvider {
 
     constructor() {
         this.openai = new OpenAI({
-            apiKey: process.env.OPENAI_API_KEY, // Ensure you have this environment variable set
+            apiKey: process.env.OPENAI_API_KEY,
         });
     }
 
