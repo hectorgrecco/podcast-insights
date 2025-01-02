@@ -19,6 +19,6 @@ export class InsightService implements IInsightService {
     }
     
     findByPodcastId(id: number): Promise<PodcastInsight[]> {
-        throw new Error('Method not implemented.');
+        return this.insightRepository.findByPodcastId(id);
     }
 }

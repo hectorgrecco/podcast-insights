@@ -1,5 +1,6 @@
-import { PodcastInsight } from "src/domain/model/PodcastInsight";
+import { GetInsightsInput } from "./input/get-insights.input";
+import { GetInsightsOutput } from "./output/get-insights.output";
 
 export interface IInsightProvider {
-    getInsights(transcriptionId: number): Promise<PodcastInsight[]>;
+    getInsights(transcriptions: GetInsightsInput[]): Promise<GetInsightsOutput[]>;
 }
