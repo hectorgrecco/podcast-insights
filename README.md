@@ -1,4 +1,4 @@
-# Podcast Insights
+# Podcast Insights 🎙️💬
 
 Podcast Insights is a tool to download podcast audio, analyze its content, and show the podcast highlights. This project uses transcription services to convert audio to text and then extracts insights from the transcriptions.
 
